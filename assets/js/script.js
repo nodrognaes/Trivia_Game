@@ -1,0 +1,2 @@
+var questions = ["Where is the hottest spot on Earth located?", "Which band has the most No. 2 Billboard hits—without ever hitting No. 1?", "When was the first computer built?", "On what day are couples statistically most likely to break up?", "What is the national animal of Scotland?", "What is the most common letter in the English language?"]
+var answers = [""]
