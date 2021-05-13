@@ -2,18 +2,27 @@
 
 var score = 0;
 var index = 0;
+var timerCount = 60;
+var timeLeft = document.getElementById("timeLeft");
+var startBtn = document.getElementById("start");
+var question = document.getElementById("question");
+var answer = document.getElementById("answer");
+var completed = false;
+
+var currentQ = [];
+var correctAnswers = [];
 
 
 var questionsArr = [
     {
         question: "Where is the hottest spot on Earth located?",
         choices: ["Libya", "Egypt", "Equador", "Thailand"],
-        correctAnswer: "Libya"
+        rightChoice: "Libya"
     },
     {
         question: "Which band has the most No. 2 Billboard hits—without ever hitting No. 1?",
         choices: ["Maroon 5", "The Rolling Stones", "Creedence Clearwater Revival", "No Doubt"],
-        correctAnswer: "Creedence Clearwater Revival"
+        rightChoice: "Creedence Clearwater Revival"
     },
     {
         question: "When was the first computer built?",
@@ -45,16 +54,39 @@ var questionsArr = [
 //declair vars to keep track of out quiz state (?'s index, times, time variables)
 
 //variables to reference the DOM elements
-var question = document.getElementById("question");
 
 //create a startQuiz function to start quiz
-var startBtn = document.getElementById("start");
-startBtn.onclick = function() {
-    ;
-}
+/* function startQuiz() {
+    
+
+} */
+console.log(questionsArr);
+
+
+
+
+startBtn.onclick = function startTimer() {
+    timer = setInterval(function() {
+        timerCount--;
+        timeLeft.textContent = timerCount;
+        if (timerCount >= 0) {
+        if (completed && timerCount > 0) {
+            clearInterval(timer);
+            winGame();
+        }
+        }
+        // Tests if time has run out
+        if (timerCount === 0) {
+        // Clears interval
+        clearInterval(timer);
+        loseGame();
+        }
+    }, 1000);
+    }; 
+
 // put timer stuff in here and run function to get quiz items
 
-
+/*
 //create function to render questions for user
 function getQuestion(){
         // get current questions object from the array
@@ -63,7 +95,7 @@ function getQuestion(){
 
     //clear out old question choices
 
-    questions.forEach() {
+    questionsArr.forEach() {
 
     }
     )
@@ -138,4 +170,4 @@ function calculateScore {
 // create a new object to store users scores for highscore page
 
 // redirect to highscores page
-// hint - window.location.href !!!!
+// hint - window.location.href !!!! */
