@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 <title>Trivia Game</title>
 </head>
-<body class="bg-light">
+<body class="bg-light bg-gradient">
     <header>
         <div class="m-2">
             <a href="./scoreBoard.html" id="scoreboard"><button type="button" class="btn btn-outline-info btn-sm">View High Scores</button></a>
@@ -17,10 +17,10 @@
                 <p>Seconds remaining: <span id="timeLeft">60</span></p>
             </div>
         </div>
-        <h1 class="row justify-content-center p-5 text-warning"><u>Random Fun-Fact Quiz!</u></h1>
+        <h1 class="row justify-content-center p-4 text-warning"><u>Random Fun-Fact Quiz!</u></h1>
     </header>
     <section class="row justify-content-center">
-        <button type="button" id="start" class="btn btn-success btn-lg m-5" data-toggle="modal" data-target="#quizModal">Start</button>
+        <button type="button" id="start" class="btn btn-success btn-lg m-4" data-toggle="modal" data-target="#quizModal">Start</button>
     </section>
 
     <div class="modal fade" id="quizModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -35,10 +35,10 @@
             <div class="modal-body">
                 <h5 id="question" class="question text-center"></h5>
                 <div class="list-group">
-                    <a href="#" id="answer" class="list-group-item list-group-item-action"></a>
-                    <a href="#" id="answer" class="list-group-item list-group-item-action"></a>
-                    <a href="#" id="answer" class="list-group-item list-group-item-action"></a>
-                    <a href="#" id="answer" class="list-group-item list-group-item-action"></a>
+                    <a href="#" id="answer-button" class="list-group-item list-group-item-action"><p id="choice1"></p></a>
+                    <a href="#" id="answer-button" class="list-group-item list-group-item-action"><p id="choice2"></p></a>
+                    <a href="#" id="answer-button" class="list-group-item list-group-item-action"><p id="choice3"></p></a>
+                    <a href="#" id="answer-button" class="list-group-item list-group-item-action"><p id="choice4"></p></a>
                   </div>
             </div>
             <div class="modal-footer">

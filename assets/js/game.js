@@ -5,24 +5,22 @@ var index = 0;
 var timerCount = 60;
 var timeLeft = document.getElementById("timeLeft");
 var startBtn = document.getElementById("start");
-var question = document.getElementById("question");
-var answer = document.getElementById("answer");
+var questionField = document.getElementById("question");
+var answers = document.getElementById("answer");
 var completed = false;
-
-var currentQ = [];
-var correctAnswers = [];
-
+var currentQuestion = {};
+var questionsAvail = [];
 
 var questionsArr = [
     {
         question: "Where is the hottest spot on Earth located?",
         choices: ["Libya", "Egypt", "Equador", "Thailand"],
-        rightChoice: "Libya"
+        correctAnswer: "Libya"
     },
     {
         question: "Which band has the most No. 2 Billboard hits—without ever hitting No. 1?",
         choices: ["Maroon 5", "The Rolling Stones", "Creedence Clearwater Revival", "No Doubt"],
-        rightChoice: "Creedence Clearwater Revival"
+        correctAnswer: "Creedence Clearwater Revival"
     },
     {
         question: "When was the first computer built?",
@@ -56,50 +54,51 @@ var questionsArr = [
 //variables to reference the DOM elements
 
 //create a startQuiz function to start quiz
-/* function startQuiz() {
-    
+function startQuiz() {
+    score = 0;
+    questionsAvail = questionsArr;
+    //getQuestion();
+    startTimer();
+}
 
-} */
-console.log(questionsArr);
 
-
-
-
-startBtn.onclick = function startTimer() {
+function startTimer() {
     timer = setInterval(function() {
         timerCount--;
         timeLeft.textContent = timerCount;
         if (timerCount >= 0) {
         if (completed && timerCount > 0) {
             clearInterval(timer);
-            winGame();
+            endQuiz();
         }
         }
-        // Tests if time has run out
         if (timerCount === 0) {
         // Clears interval
         clearInterval(timer);
-        loseGame();
+        endQuiz();
         }
     }, 1000);
     }; 
 
+startBtn.addEventListener("click", startQuiz);
 // put timer stuff in here and run function to get quiz items
 
 /*
 //create function to render questions for user
 function getQuestion(){
         // get current questions object from the array
-
+    questionField.textContent = questionArr.question;
     //update your html with current question
 
     //clear out old question choices
 
-    questionsArr.forEach() {
+    questionsArr.forEach(function(q) {
+
+    }) {
 
     }
-    )
-    var choice = 
+
+    var choice = questionsArr[i].choices;
     // attach click event listener to each choice
     choice.onClick() = answerClicked;
 
@@ -108,10 +107,13 @@ function getQuestion(){
 
 //create a function for questionClicked()
 function answerClicked() {
-    ///check if the user answered wrong question
+    var userChoice = document.getElementById("answer");
+    userChoice.addEventListener("click", function() {
+    });
+    //check if the user answered wrong question
     if () {
         document.getElementById("wrong").style.display = "block";
-        score++;
+        score += 100;
     } //can decrement time if answer is wrong, or display Wrong and move on
     //create if to check if time has hit 0 or time remaining
     
@@ -125,22 +127,24 @@ function answerClicked() {
     }
     
 
-    //display time on the page
-    //text time
-
     // check to see if the answer is correct, display Correct, +points, etc
     //move on to the next question
     //if we are out of questions, run endQuiz function else go to next question
     if(currentQIndex === questions.length) {}
-        quizEnd();
+        endQuiz();
     } else {
         getQuestion();
     }
 }
 
+
+function getQuestion() {
+
+}
 //create function to end quiz
 
-function endQuiz {
+function endQuiz() {
+
 
 }
 //clear time interval
@@ -150,11 +154,6 @@ function endQuiz {
 //check out methods .hide() .show() 
     // time.hide(), etc
     // .show to render
-
-// function to run time
-// time--
-//display timer on page
-//if time hits 0, run endQuiz().
 
 // function for highScore
 
