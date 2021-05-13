@@ -7,15 +7,54 @@
 <meta name="Description" content="Enter your description here"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-<link rel="stylesheet" href="assets/css/style.css">
 <title>Trivia Game</title>
 </head>
 <body>
-    <h1>Trivia Game</h1>
-    </ul>
+    <header>
+        <nav class="row justify-content-space-between m-2">
+            <a href="./scoreBoard.html" id="scoreboard"><button type="button" class="btn btn-outline-info btn-sm">View High Scores</button></a>
+            <p id="countdown"></p>
+        </nav>
+        <h1 class="row justify-content-center p-5 text-warning"><u>Random Fun-Fact Quiz!</u></h1>
+    </header>
+    <section class="row justify-content-center">
+        <button type="button" id="start" class="btn btn-success btn-lg m-5" data-toggle="modal" data-target="#quizModal">Start</button>
+    </section>
+
+    <div class="modal fade" id="quizModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Question:</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <h5 id="question" class="question text-center"></h5>
+                <div class="list-group">
+                    <a href="#" id="answer" class="list-group-item list-group-item-action"></a>
+                    <a href="#" id="answer" class="list-group-item list-group-item-action"></a>
+                    <a href="#" id="answer" class="list-group-item list-group-item-action"></a>
+                    <a href="#" id="answer" class="list-group-item list-group-item-action"></a>
+                  </div>
+            </div>
+            <div class="modal-footer">
+                <div id="correct" class="correct text-muted d-none">
+                    <p><em>Correct!</em></p>
+                </div>
+                <div id="wrong" class="wrong text-muted d-none">
+                    <p><em>Wrong!</em></p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
-<script src="assets/js/script.js"></script>
+<script src="assets/js/game.js"></script>
 </body>
 </html>
