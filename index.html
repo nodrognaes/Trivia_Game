@@ -12,9 +12,12 @@
 <body class="bg-light bg-gradient">
     <header>
         <div class="m-2">
-            <a href="./scoreBoard.html" id="scoreboard"><button type="button" class="btn btn-outline-info btn-sm">View High Scores</button></a>
-            <div class="timer m-1">
+            <a href="./scoreBoard.html" id="scoreboard"><button type="button" class="btn btn-outline-info btn-sm m-1">View High Scores</button></a>
+            <div id="timer" class="m-1">
                 <p>Seconds remaining: <span id="timeLeft">60</span></p>
+            </div>
+            <div class="m-1">
+              <p>Score: <span id="score">0</span></p>
             </div>
         </div>
         <h1 class="row justify-content-center p-4 text-warning"><u>Random Fun-Fact Quiz!</u></h1>
@@ -35,10 +38,10 @@
             <div class="modal-body">
                 <h5 id="question" class="question text-center"></h5>
                 <div class="list-group">
-                    <a href="#" id="answer-button" class="list-group-item list-group-item-action"><p id="choice1"></p></a>
-                    <a href="#" id="answer-button" class="list-group-item list-group-item-action"><p id="choice2"></p></a>
-                    <a href="#" id="answer-button" class="list-group-item list-group-item-action"><p id="choice3"></p></a>
-                    <a href="#" id="answer-button" class="list-group-item list-group-item-action"><p id="choice4"></p></a>
+                    <a href="#" id="answerBtn" class="list-group-item list-group-item-action"><p id="choice"></p></a>
+                    <a href="#" id="answerBtn" class="list-group-item list-group-item-action"><p id="choice"></p></a>
+                    <a href="#" id="answerBtn" class="list-group-item list-group-item-action"><p id="choice"></p></a>
+                    <a href="#" id="answerBtn" class="list-group-item list-group-item-action"><p id="choice"></p></a>
                   </div>
             </div>
             <div class="modal-footer">
