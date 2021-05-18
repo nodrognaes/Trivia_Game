@@ -38,24 +38,23 @@ function getQuestion() {
   // UPDATE QUESTION ON HMTL QUESTION ELEMENT
   questionTextEl.textContent = currentQuestion.question;
 
- /* // CLEAR OUT OLD QUESTION CHOICES ON HTML CHOICES ELEMENT
-  choicesEl.innerHTML = ""; */
+ // CLEAR OUT OLD QUESTION CHOICES ON HTML CHOICES ELEMENT
+  choicesEl.innerHTML = "";
 
   // LOOP OVER CHOICES ARRAY
   for (var i = 0; i < currentQuestion.choices.length; i++) {
     // CREATE NEW BUTTON HTML ELEMENT FOR EACH CHOICE
     
-
-    // ADD A CLASS ATTRIBUTE ON THIS BUTTON AND SET IT TO 'CHOICE'
-
-    // ADD A VALUE ATTRIBUTE ON THIS BUTTON AND SET IT TO THE CURRENT CHOICE FROM ARRAY
+      var choiceBtn = document.createElement("button")
+      choiceBtn.className = "choices";
 
     // SET TEXT CONTEXT OF THIS BUTTON TO THE CURRENT CHOICE FROM ARRAY
-
+    choiceBtn.textContent = currentQuestion.choices[i];
     // ADD EVENT LISTENER ON 'CLICK' TO THIS BUTTON, PASSING IN EVENT CALLBACK FUNCTION, userChoice
+    choiceBtn.onclick = userChoice;
 
-    // DISPLAY CHOICE ON THE PAGE BY APPENDING THIS BUTTON TO THE CHOICES ELEMENT
-
+    // DISPLAY CHOICE ON THE PAGE BY APPENDING THIS BUTTON TO THE CHOICES ELEMENT 
+    choicesEl.append(choiceBtn)
 
   };
 }
@@ -68,10 +67,10 @@ function userChoice(event) {
   //    console.log the event target to look for the where the value attribute is
   // 2. get the anwer to the current question
   // 3. compare these two variables to check if user choice is wrong
-  console.log(event.target);
-  console.log(this); // this = event.target
-
-  if (event.target.value !== questions[currentQuestionIndex].answer) {
+  console.log(event.target.innerHTML);
+  // console.log(this); // this = event.target
+// console.log('here', questions[currentQuestionIndex].answer, event.target.value)
+  if (event.target.innerHTML !== questions[currentQuestionIndex].answer) {
     // PENALIZE TIME BY SUBTRACTING 10 SECONDS FROM THE GLOBAL TIME VARIABLE
     time -= 10;
     // IF TIME IS LESS THAN 0, MAKE IT EQUAL TO 0
@@ -143,6 +142,7 @@ function saveHighscore() {
   if (initials !== "") {
     // GET SAVED SCORES FROM LOCAL STORAGE AND CONVERT IT AND STORE IT TO AN ARRAY VARIABLE
     // OR IF NOT ANY, SET IT TO EMPTY ARRAY
+    var highscores = JSON.parse(localStorage.getItem("highscores")) || [];
   
 
     // CREATE A NEW SCORE OBJECT FOR THE USER TO STORE SCORE AND INITIALS
@@ -154,8 +154,8 @@ function saveHighscore() {
     // SAVE TO LOCAL STORAGE
     // 1. push new score object to the scores array
     // 2. save updated scores array to local storage. do not forget to convert the object to string before saving it
-    
-    JSON.stringify()
+    highscores.push(newScore);
+    localStorage.setItem("highscores", JSON.stringify(highscores));
 
     // REDIRECT TO HIGH SCORES HTML PAGE
     window.location.href = "highscores.html";

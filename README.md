@@ -6,6 +6,6 @@ This is a trivia quiz created using HTML and Javascript. The questions are compr
 
 ## How to use:
 
-The user will have 1 minute to answer as many questions as they can. For each question correctly answered, they will be awarded 20 points. If time runs out or all questions have been answered, the game will end. The user can then log their score to the scoreboard and play again.
+The user will have 1 minute to answer as many questions as they can. For each incorrect answer, their score will be subtracted by 10 pts. If time runs out or all questions have been answered, the game will end. The user can then log their score to the scoreboard and play again.
 
 ## Screenshots:
